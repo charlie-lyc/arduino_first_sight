@@ -1,3 +1,7 @@
+// 정상적인 물리적 연결
+// Arduino RX(0) -> HC06 TXD
+// Arduino TX(1) -> HC06 RXD
+
 # include <SoftwareSerial.h>
 
 # define RX 0
@@ -21,23 +25,25 @@ void loop() {
   if (hc06.available() > 0) {
     message = hc06.read();
     Serial.println(message);
-    switch (message - 48) {
-      case 0:
+    // 안드로이드 앱을 통해 전송되는 값은 숫자임!
+    // 따라서 Not Apply ASCII !
+    switch (message) {
+      case 0: // Green Off
         digitalWrite(5, LOW);
         break;
-      case 1:
+      case 1: // Green On
         digitalWrite(5, HIGH);
         break;
-      case 2:
+      case 2: // Yellow Off
         digitalWrite(6, LOW);
         break;
-      case 3:
+      case 3: // Yellow On
         digitalWrite(6, HIGH);
         break;
-      case 4:
+      case 4: // Red Off
         digitalWrite(7, LOW);
         break;
-      case 5:
+      case 5: // Red On
         digitalWrite(7, HIGH);
         break;
     }

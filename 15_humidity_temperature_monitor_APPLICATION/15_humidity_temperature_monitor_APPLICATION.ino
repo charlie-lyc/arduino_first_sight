@@ -10,9 +10,9 @@ void setup() {
 }
 
 void loop() {
-  delay(2000);
-  int humidity = dht.readHumidity(); // 20~90 %RH
-  int temperature = dht.readTemperature(); // 0~50 Celsius
+  delay(3000);
+  float humidity = dht.readHumidity(); // 20~90 %RH
+  float temperature = dht.readTemperature(); // 0~50 Celsius
   Serial.print("Humidity: ");
   Serial.print(humidity);
   Serial.println(" %RH");
