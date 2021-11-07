@@ -10,7 +10,7 @@ void setup() {
 }
 
 void loop() {
-  // 3 Octave 'do' ~ 4 Octave 'do'
+  // 3 Octave 'Do' ~ 4 Octave 'Do'
   if (digitalRead(pins[0]) == HIGH) {
     Serial.println(130.8);
     tone(buzz, 130.8);

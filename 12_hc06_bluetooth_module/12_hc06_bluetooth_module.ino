@@ -21,10 +21,12 @@ void setup() {
 }
 
 void loop() {
+  // 블루투스 모듈쪽에서 처리해(읽어들여야)할 메시지의 갯수가 0개 보다 많을 경우
   if (hc06.available() > 0) {
     Serial.write(hc06.read());
     delay(50);
   }
+  // 시리얼쪽에서 처리해(읽어들여야)할 메시지의 갯수가 0개 보다 많을 경우
   if (Serial.available() > 0) {
     hc06.write(Serial.read());
     delay(50);
