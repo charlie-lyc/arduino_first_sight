@@ -15,8 +15,8 @@ void loop() {
     Serial.println(130.8);
     tone(buzz, 130.8);
   } else if (digitalRead(pins[1]) == HIGH) {
-    Serial.println(155.6);
-    tone(buzz, 155.6);
+    Serial.println(146.8);
+    tone(buzz, 146.8);
   } else if (digitalRead(pins[2]) == HIGH) {
     Serial.println(164.8);
     tone(buzz, 164.8);
